@@ -32,22 +32,22 @@ satz_des_pythagoras = Video.create(
 )
 
 rechter_winkel = Video.create(
-  title: "Rechter Winkel",
+  title: "Der Rechte Winkel",
   subject: mathematik
 )
 
 quadratwurzel = Video.create(
-  title: "Quadratwurzel",
+  title: "Die Quadratwurzel",
   subject: mathematik
 )
 
 rechtwinkliges_dreieck = Video.create(
-  title: "Rechtwinkliges Dreieck",
+  title: "Das rechtwinklige Dreieick",
   subject: mathematik
 )
 
 gleichschenkliges_Dreieck = Video.create(
-  title: "Gleichschenkliges Dreieck",
+  title: "Das gleichschenklige Dreieick",
   subject: mathematik
 )
 
@@ -67,28 +67,28 @@ goethe = Video.create(
 )
 
 eisen = Video.create(
-  title: "Eisen",
+  title: "Eisen und andere Metalle",
   subject: chemie
 )
 
 wolf = Video.create(
-  title: "Wolf",
-  subject: chemie
+  title: "Der Wolf",
+  subject: biologie
 )
 
 bäume = Video.create(
-  title: "Bäume",
-  subject: chemie
+  title: "Bäume und Wurzeln",
+  subject: biologie
 )
 
 pythagoras = Video.create(
-  title: "Pythagoras",
-  subject: chemie
+  title: "Die Pythagoreer",
+  subject: geschichte
 )
 
 eisenzeit = Video.create(
-  title: "Eisenzeit",
-  subject: chemie
+  title: "Die Eisenzeit",
+  subject: geschichte
 )
 
 puts "done"
