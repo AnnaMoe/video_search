@@ -4,8 +4,13 @@ class PagesController < ApplicationController
     @ALL_SUBJECTS = "All subjects"
     # generate an array of strings (for the select dropdown)
     @array_of_subject_names = Subject.all.map { |subject| subject.name }
+    
     # add "all subjects" option to the array
     @subjects = [ @ALL_SUBJECTS ] + @array_of_subject_names
+    @videos = []
+
+    # return to stop executing code bellow (prevent DB query to be executed if the user did not press the search button)
+    return unless params[:commit].present?
     
     if params[:query].present?
 
