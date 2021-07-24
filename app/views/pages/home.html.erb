@@ -6,13 +6,18 @@
 
         "local: true" is used to disable default rails 6 behavior of remote: true
       -->
-      <%= form_with url: root_path, method: :get, local: true do |form| %>
-        <%= form.text_field :query,
-          value: params[:query],
-          class: "form-control",
-          placeholder: "Find a video"
-        %>
-        <%= form.submit "Search", class: "btn btn-primary" %>
+      <%= form_with url: root_path, method: :get, local: true, class: "form-inline" do |form| %>
+        <div class="form-group mb-2">
+          <%= form.text_field :query,
+            value: params[:query],
+            class: "form-control",
+            placeholder: "Find a video"
+          %>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          dropdown
+        </div>
+        <%= form.submit "Search", class: "btn btn-primary mb-2" %>
       <% end %>
 
       <div id="videos">
