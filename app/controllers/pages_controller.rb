@@ -1,5 +1,12 @@
 class PagesController < ApplicationController
   def home
+    # string all subjects as upper case, because it's a constant
+    @ALL_SUBJECTS = "All subjects"
+    # generate an array of strings (for the select dropdown)
+    @array_of_subject_names = Subject.all.map { |subject| subject.name }
+    # add "all subjects" option to the array
+    @subjects = [ @ALL_SUBJECTS ] + @array_of_subject_names
+    
     if params[:query].present?
 
       # solution with plain active record:
@@ -12,12 +19,16 @@ class PagesController < ApplicationController
       # @videos = Video.joins(:subject).where(sql_query, query: "%#{params[:query]}%")
       # with this code I can't search for the subject and video title at the same time.
 
-      # there is a way easier solution with the gem PG Search, the method is defined in the Video model.
+      # there is a way easier solution with the gem PG Search, the method is defined in the Video model
 
       @videos = Video.global_search(params[:query])
     else
       # if search query is empty
       @videos = Video.all       
+    end
+
+    if params[:subject].present? && params[:subject] != @ALL_SUBJECTS
+      @videos = @videos.by_subject(params[:subject])
     end
   end
 end

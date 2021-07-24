@@ -1,9 +1,9 @@
 class Video < ApplicationRecord
   belongs_to :subject
 
-   #using gem PG search
-   include PgSearch::Model
-   # pg_search_scope is the method you need to call in the controller, when you want to search
+  #using gem PG search
+  include PgSearch::Model
+  # pg_search_scope is the method you need to call in the controller, when you want to search
   pg_search_scope :global_search,
     against: :title,
     #searching through association
@@ -13,5 +13,10 @@ class Video < ApplicationRecord
     using: {
       # partial words allowed (prefix only)
       tsearch: { prefix: true } 
+    }
+
+  pg_search_scope :by_subject,
+    associated_against: {
+      subject: :name 
     }
 end
