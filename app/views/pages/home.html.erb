@@ -11,6 +11,11 @@
       <% end %>
 
       <div id="videos">
+        <!-- "no results" if teh search term does not match --->
+        <% if @videos.length == 0 %>
+          <p>No results</p>
+        <% end %>
+        
         <% @videos.each do |video| %>
           <h4><%= video.title %></h4>
           <p><%= video.subject.name %></p>
