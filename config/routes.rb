@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :videos, only: [:index]
+  root to: 'pages#home'
+  resources :videos, only: :index
 end
