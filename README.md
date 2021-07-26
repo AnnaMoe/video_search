@@ -12,6 +12,8 @@ To implement the search, I used the pg_search gem which makes it easy to achieve
 
 * Ruby version: '2.6.6'
 
+* Rails version: '6.0.4'
+
 * Gems: [gem 'pg_search', '~> 2.3.0'](https://github.com/Casecommons/pg_search)
 
 * Configuration
